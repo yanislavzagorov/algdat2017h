@@ -11,10 +11,8 @@ Når en mener at en oppgave/metode er løst, blir en først teste med egne teste
 
 import java.util.*;
 
-public class Oblig1Test
-{
-	public static void main(String[] args)
-	{
+public class Oblig1Test {
+	public static void main(String[] args) {
 		int antallFeil = 0;
 
 		//antallFeil += oppgave1();
@@ -25,12 +23,9 @@ public class Oblig1Test
 		//antallFeil += oppgave6();
 		//antallFeil += oppgave7();
 
-		if (antallFeil == 0)
-		{
+		if (antallFeil == 0) {
 			System.out.println("Gratulerer!! Du passerte testen!");
-		}
-		else
-		{
+		} else {
 			System.out.println("Må forbedres! Du har minst "
 					+ antallFeil + " feil eller svakheter!");
 		}
@@ -38,66 +33,62 @@ public class Oblig1Test
 
 	///// Oppgave 1 //////////////////////////////////////
 
-	public static int oppgave1()
-	{
+	public static int oppgave1() {
 		int antallFeil = 0;
 
 		boolean unntak = false;
 		int[] tom = {};
-		try
-		{
+		try {
 			Oblig1.min(tom);  // kaller min-metoden
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			unntak = true;
-			if (!(e instanceof java.util.NoSuchElementException))
-			{
+			if (!(e instanceof java.util.NoSuchElementException)) {
 				System.out.println("Opgave 1: a) Feil unntak for en tom tabell!");
 				antallFeil++;
 			}
 		}
 
-		if (!unntak)
-		{
+		if (!unntak) {
 			System.out.println("Opgave 1: b) Kast unntak for en tom tabell!");
 			antallFeil++;
 		}
 
 		int[] a = {3};
-		int[] b = {5,2,8,4,7,6};
-		int[] c = {5,4,3,2,1};
-		int[] d = {1,2,3,4,5};
+		int[] b = {5, 2, 8, 4, 7, 6};
+		int[] c = {5, 4, 3, 2, 1};
+		int[] d = {1, 2, 3, 4, 5};
 		if (Oblig1.min(a) != 3 || Oblig1.min(b) != 2 ||
-				Oblig1.min(c) != 1 || Oblig1.min(d) != 1)
-		{
+				Oblig1.min(c) != 1 || Oblig1.min(d) != 1) {
 			System.out.println("Oppgave 1: c) Min-metoden: Feil resultat!");
 			antallFeil++;
 		}
 
-		int[] e = {1,4,3,7,6,5,10,2,9,8};
-		int[] f = {1,3,4,6,5,7,2,9,8,10};
+		int[] e = {8, 9, 2, 10, 5, 6, 1, 7, 3, 4};
+		int[] f = {1, 8, 9, 2, 10, 5, 6, 3, 7, 4};
 
 		Oblig1.min(e);
-		if(!Arrays.equals(e,f))
-		{
+		if (!Arrays.equals(e, f)) {
 			System.out.println("Oppgave 1: d) Min-metoden: feil i ombyttingene!");
 			antallFeil++;
 		}
 
-		a = new int[] {6,5,4,3,2,1};
-		b = new int[] {1,2,3,4,5};
-		c = new int[] {4, 9, 3, 6, 1, 5, 7, 8, 10, 2};
-		d = new int[] {2, 5, 8, 4, 3, 10, 1, 7, 6, 9};
+		a = new int[]{6, 5, 4, 3, 2, 1};
+		b = new int[]{1, 2, 3, 4, 5};
+		c = new int[]{4, 9, 3, 6, 1, 5, 7, 8, 10, 2};
+		d = new int[]{2, 5, 8, 4, 3, 10, 1, 7, 6, 9};
 
 		if (Oblig1.ombyttinger(a) != 5 || Oblig1.ombyttinger(b) != 0
-				|| Oblig1.ombyttinger(c) != 8 || Oblig1.ombyttinger(d) != 7)
-		{
+				|| Oblig1.ombyttinger(c) != 8 || Oblig1.ombyttinger(d) != 7) {
 			System.out.println("Oppgave 1: e) Feil opptelling i ombyttingsmetoden!");
 			antallFeil++;
 		}
 		return antallFeil;
 	}
+
+
+
+	/*
+
 
 ///// Oppgave 2 //////////////////////////////////////
 
@@ -163,36 +154,28 @@ public class Oblig1Test
 
 	///// Oppgave 3 //////////////////////////////////////
 
-	public static int oppgave3()
-	{
+	public static int oppgave3() {
 		int antallFeil = 0;
 
 		int[] a = {};   // skal kaste unntak her!
 		int[] b = {1};  // skal ikke kaste unntak her!
-		int[] c = {1,1};
-		int[] d = {6,2,4,6,9,1,4,9,10};
-		int[] dkopi = {6,2,4,6,9,1,4,9,10};
-		int[] e = {5,4,3,2,1};
-		int[] f = {1,2,2,2,2,2,3};
+		int[] c = {1, 1};
+		int[] d = {6, 2, 4, 6, 9, 1, 4, 9, 10};
+		int[] dkopi = {6, 2, 4, 6, 9, 1, 4, 9, 10};
+		int[] e = {5, 4, 3, 2, 1};
+		int[] f = {1, 2, 2, 2, 2, 2, 3};
 
-		try
-		{
+		try {
 			Oblig1.modus2(a);  // kaller metoden
-		}
-		catch (Exception e1)
-		{
-			if (!(e1 instanceof IllegalStateException))
-			{
+		} catch (Exception e1) {
+			if (!(e1 instanceof IllegalStateException)) {
 				System.out.println("Oppgave 3: a) Feil unntak for en tom tabell!");
 				antallFeil++;
 			}
 
-			try
-			{
+			try {
 				Oblig1.modus2(b);  // kaller metoden
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				System.out.println
 						("Oppgave 3: b) Ikke unntak for tabell med 1 verdi!");
 				antallFeil++;
@@ -202,20 +185,19 @@ public class Oblig1Test
 					|| Oblig1.modus2(c) != 1
 					|| Oblig1.modus2(d) != 6
 					|| Oblig1.modus2(e) != 5
-					|| Oblig1.modus2(f) != 3)
-			{
+					|| Oblig1.modus2(f) != 3) {
 				System.out.println("Oppgave 3: c) Metoden gir feil resultat!");
 				antallFeil++;
 			}
 
-			if (!Arrays.equals(d,dkopi))
-			{
+			if (!Arrays.equals(d, dkopi)) {
 				System.out.println("Oppgave 3: d) Metoden endrer tabellen!");
 				antallFeil++;
 			}
 
 			return antallFeil;
 		}
+	}
 
 		///// Oppgave 4 //////////////////////////////////////
 
@@ -781,4 +763,13 @@ public class Oblig1Test
 
 		return a;                        // permutasjonen returneres
 	}
+
+
+
+
+
+
+	*/
 }
+
+
