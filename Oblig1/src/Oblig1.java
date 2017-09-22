@@ -39,7 +39,7 @@ public class Oblig1 {
 	}
 
 	 public static int modus1(int[] a){
-	 	if(a.length == 0 || a.length == 1 || sjekkStigende(a) == false){
+		if(a.length == 0 || a.length == 1 || sjekkStigende(a) == false){
 			throw new IllegalStateException("Tom, kun 1 verdi eller ikke stigende");
 		}
 		int[] teller = new int[50];
