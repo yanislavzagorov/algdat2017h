@@ -2,8 +2,8 @@ import java.util.*;
 public class Oblig1 {
 
 	public static void main(String []args){
-		int [] test = {1,2,3,4,5,6,7,7};
-		System.out.println("sjekkStigende: " + sjekkStigende(test));
+		int [] test = { 5, 3, 7, 4, 3, 5, 7, 8, 6, 7, 3, 3};
+		System.out.println("modus2: " + modus2(test));
 	}
 
 	public static int min(int[] a){
@@ -79,13 +79,15 @@ public class Oblig1 {
 		if(a.length == 1){
 			throw new IllegalStateException("Arrayen har kun 1 index!");
 		}
-		int modus = antallGjentagelse(a[1],a);
+		int modus = antallGjentagelse(a[0],a);
+		int tall = 0;
 		for(int i = 1; i < a.length; i++){
-			if(antallGjentagelse(a[i], a) > antallGjentagelse(a[i-1], a)){
-				modus = antallGjentagelse(a[i-1], a);
+			if(antallGjentagelse(a[i], a) > modus){
+				modus = antallGjentagelse(a[i], a);
+				tall = a[i];
 			}
 		}
-		return modus;
+		return tall;
 	}
 	public static int antallGjentagelse(int tall, int[] a){
 		int teller = 0;

@@ -19,7 +19,7 @@ public class Oblig1Test
 
     //antallFeil += oppgave1();
     //antallFeil += oppgave2();
-    antallFeil += oppgave3();
+    //antallFeil += oppgave3();
     //antallFeil += oppgave4();
     //antallFeil += oppgave5();
     //antallFeil += oppgave6();
@@ -34,8 +34,8 @@ public class Oblig1Test
       System.out.println("Må forbedres! Du har minst "
         + antallFeil + " feil eller svakheter!");
     }
-  }/*
-
+  }
+/*
   ///// Oppgave 1 //////////////////////////////////////
 
   public static int oppgave1()
@@ -198,8 +198,8 @@ public class Oblig1Test
       antallFeil++;
     }
 
-    if (/*Oblig1.modus2(b) != 1
-        */ Oblig1.modus2(c) != 1
+    if (Oblig1.modus2(b) != 1
+        || Oblig1.modus2(c) != 1
         || Oblig1.modus2(d) != 6
         || Oblig1.modus2(e) != 5
         || Oblig1.modus2(f) != 2)
@@ -216,10 +216,9 @@ public class Oblig1Test
 
     return antallFeil;
   }
-}
-/*
-  ///// Oppgave 4 //////////////////////////////////////
 
+  ///// Oppgave 4 //////////////////////////////////////
+/*
   public static int oppgave4()
   {
     int antallFeil = 0;
@@ -781,5 +780,5 @@ public class Oblig1Test
     }
 
     return a;                        // permutasjonen returneres
-  }
-}*/
+  }*/
+}
