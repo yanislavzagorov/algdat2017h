@@ -89,6 +89,7 @@ public class Oblig1 {
 		}
 		return tall;
 	}
+
 	public static int antallGjentagelse(int tall, int[] a){
 		int teller = 0;
 		for(int i = 0; i < a.length; i++){
@@ -97,5 +98,13 @@ public class Oblig1 {
 			}
 		}
 		return teller;
+	}
+
+	public static void delsortering(int[] a){
+		for (int i = 0; i < a.length ; i++) {
+			if(a[i] % 2 != 0){
+					
+			}
+		}
 	}
 }
