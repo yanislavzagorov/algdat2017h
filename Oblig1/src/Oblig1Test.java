@@ -15,8 +15,8 @@ public class Oblig1Test {
 	public static void main(String[] args) {
 		int antallFeil = 0;
 
-		antallFeil += oppgave1();
-		//antallFeil += oppgave2();
+		//antallFeil += oppgave1();
+		antallFeil += oppgave2();
 		//antallFeil += oppgave3();
 		//antallFeil += oppgave4();
 		//antallFeil += oppgave5();
@@ -33,7 +33,7 @@ public class Oblig1Test {
 
 	///// Oppgave 1 //////////////////////////////////////
 
-	public static int oppgave1() {
+	/*public static int oppgave1() {
 		int antallFeil = 0;
 
 		boolean unntak = false;
@@ -83,11 +83,11 @@ public class Oblig1Test {
 			antallFeil++;
 		}
 		return antallFeil;
-	}
+	}*/
 
 
 
-	/*
+	
 
 
 ///// Oppgave 2 //////////////////////////////////////
@@ -151,6 +151,7 @@ public class Oblig1Test {
 		}
 		return antallFeil;
 	}
+	/*
 
 	///// Oppgave 3 //////////////////////////////////////
 
