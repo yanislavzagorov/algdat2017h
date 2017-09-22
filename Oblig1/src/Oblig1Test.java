@@ -15,7 +15,7 @@ public class Oblig1Test {
 	public static void main(String[] args) {
 		int antallFeil = 0;
 
-		//antallFeil += oppgave1();
+		antallFeil += oppgave1();
 		//antallFeil += oppgave2();
 		//antallFeil += oppgave3();
 		//antallFeil += oppgave4();
