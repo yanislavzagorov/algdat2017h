@@ -6,12 +6,12 @@ public class Oblig1 {
 	}
 
 	public static int min(int[] a){
-		int minst = 0;
+		int plassHolder = 0;
 		for(int i = a.length-1; i > 0; i--){
 			if(a[i] < a[i-1]){
-				minst = a[i];
+				plassHolder = a[i];
 				a[i] = a[i-1];
-				a[i-1] = minst;
+				a[i-1] = plassHolder;
 			}
 
 		}
