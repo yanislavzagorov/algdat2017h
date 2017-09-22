@@ -18,8 +18,8 @@ public class Oblig1Test
     int antallFeil = 0;
 
     //antallFeil += oppgave1();
-    antallFeil += oppgave2();
-    //antallFeil += oppgave3();
+    //antallFeil += oppgave2();
+    antallFeil += oppgave3();
     //antallFeil += oppgave4();
     //antallFeil += oppgave5();
     //antallFeil += oppgave6();
@@ -34,8 +34,8 @@ public class Oblig1Test
       System.out.println("Må forbedres! Du har minst "
         + antallFeil + " feil eller svakheter!");
     }
-  }
-/*
+  }/*
+
   ///// Oppgave 1 //////////////////////////////////////
 
   public static int oppgave1()
@@ -97,7 +97,7 @@ public class Oblig1Test
       antallFeil++;
     }
     return antallFeil;
-  } */
+  }
 
 ///// Oppgave 2 //////////////////////////////////////
 
@@ -158,7 +158,7 @@ public class Oblig1Test
        antallFeil++;
      }
     return antallFeil;
-  } /*
+  }*/
 
   ///// Oppgave 3 //////////////////////////////////////
 
@@ -174,7 +174,7 @@ public class Oblig1Test
     int[] e = {5,4,3,2,1};
     int[] f = {1,2,2,2,2,2,3};
 
-	try
+  try
     {
       Oblig1.modus2(a);  // kaller metoden
     }
@@ -182,9 +182,10 @@ public class Oblig1Test
     {
       if (!(e1 instanceof IllegalStateException))
       {
-		System.out.println("Oppgave 3: a) Feil unntak for en tom tabell!");
+    System.out.println("Oppgave 3: a) Feil unntak for en tom tabell!");
       antallFeil++;
     }
+  }
 
     try
     {
@@ -197,8 +198,8 @@ public class Oblig1Test
       antallFeil++;
     }
 
-    if (Oblig1.modus2(b) != 1
-        || Oblig1.modus2(c) != 1
+    if (/*Oblig1.modus2(b) != 1
+        */ Oblig1.modus2(c) != 1
         || Oblig1.modus2(d) != 6
         || Oblig1.modus2(e) != 5
         || Oblig1.modus2(f) != 2)
@@ -215,7 +216,8 @@ public class Oblig1Test
 
     return antallFeil;
   }
-
+}
+/*
   ///// Oppgave 4 //////////////////////////////////////
 
   public static int oppgave4()
@@ -779,5 +781,5 @@ public class Oblig1Test
     }
 
     return a;                        // permutasjonen returneres
-  }*/
-} 
+  }
+}*/
