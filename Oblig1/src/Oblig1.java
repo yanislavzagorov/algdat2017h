@@ -45,7 +45,7 @@ public class Oblig1 {
 
 	 public static int modus1(int[] a){
 	 	if(a.length == 0 || a.length == 1 || sjekkStigende(a) == false){
-			throw new IllegalStateException("arrayen er tom, har kun 1 eller ikke er sortert stigende");
+			throw new IllegalStateException("Tom, kun 1 verdi eller ikke stigende");
 		}
 		int[] teller = new int[50];
 		for(int i = 0; i < a.length; i++){
@@ -61,12 +61,25 @@ public class Oblig1 {
 	 }
 
 	 public static Boolean sjekkStigende(int[] a){
-	 	for(int i = 0; i < a.length; i++){
-	 		if(a[i] < a[i+1]){
-	 			return true;
-	 		}
-	 	}
-	 	return false;
-	 }
+	 	int end = a.length-1;
+	    int counterAsc = 0;
+	    int counterDesc = 0;
+
+	    for (int i = 0; i < end; i++) {
+	        if(a[i] < a[i+1]){
+	            counterAsc++;
+	        }
+	        else if(a[i] > a[i+1]){
+	            counterDesc++;
+	        }
+	    }
+	    if(counterDesc == 0){
+	        return true;
+	    }
+	    else if(counterAsc == 0){
+	        return true;
+	    }
+	    else return false;
+		 }
 
 }
