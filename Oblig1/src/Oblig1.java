@@ -1,11 +1,10 @@
 import java.util.*;
 public class Oblig1 {
 
-	/*public static void main(String []args){
-		int [] test = {10, 5, 11, 7, 3, 2, 8, 4, 17, 18};
-		System.out.println("minsverdi: " + min(test));
-		System.out.println("teller: " + ombyttinger(test));
-	}*/
+	public static void main(String []args){
+		int [] test = {4, 9, 3, 6, 1, 5, 7, 8, 10, 2};
+		System.out.println("sjekkStigende: " + sjekkStigende(test));
+	}
 
 	public static int min(int[] a){
 		if(a.length == 0){
@@ -61,18 +60,17 @@ public class Oblig1 {
 	 }
 
 	 public static Boolean sjekkStigende(int[] a){
-	 	int end = a.length-1;
-	    int counterAsc = 0;
+	    int counter = 0;
 
-	    for (int i = 0; i < end; i++) {
-	        if(a[i] < a[i+1]){
-	            counterAsc++;
+	    for (int i = 0; i < a.length-1; i++) {
+	        if(a[i] < a[i+1] || a[i] == a[i+1]){
+	            counter++;
 	        }
 	    }
-	    if(counterAsc == 0){
-	        return true;
+	    if(counter == a.length-1){
+	        return false;
 	    }else{ 
-	    	return false;
+	    	return true;
 	    }
 	}
 }
