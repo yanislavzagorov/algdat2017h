@@ -2,7 +2,7 @@ import java.util.*;
 public class Oblig1 {
 
 	public static void main(String []args){
-		int [] test = {4, 9, 3, 6, 1, 5, 7, 8, 10, 2};
+		int [] test = {1,2,3,4,5,6,7,7};
 		System.out.println("sjekkStigende: " + sjekkStigende(test));
 	}
 
@@ -60,17 +60,11 @@ public class Oblig1 {
 	 }
 
 	 public static Boolean sjekkStigende(int[] a){
-	    int counter = 0;
-
-	    for (int i = 0; i < a.length-1; i++) {
-	        if(a[i] < a[i+1] || a[i] == a[i+1]){
-	            counter++;
-	        }
+	    for(int i = 1; i < a.length; i++){
+	    	if(a[i-1] > a[i]){
+	    		return false;
+	    	}
 	    }
-	    if(counter == a.length-1){
-	        return false;
-	    }else{ 
-	    	return true;
-	    }
+	    return true;
 	}
 }
