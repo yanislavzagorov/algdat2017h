@@ -1,3 +1,4 @@
+import java.util.*;
 public class Oblig1 {
 
 	public static void main(String []args){
@@ -6,6 +7,9 @@ public class Oblig1 {
 	}
 
 	public static int min(int[] a){
+		if(a.length == 0){
+			throw new NoSuchElementException("Arrayen er Tom!");
+		}
 		int plassHolder = 0;
 		for(int i = a.length-1; i > 0; i--){
 			if(a[i] < a[i-1]){
