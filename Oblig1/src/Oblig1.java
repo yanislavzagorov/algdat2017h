@@ -17,9 +17,7 @@ public class Oblig1 {
 				a[i] = a[i-1];
 				a[i-1] = plassHolder;
 			}
-
 		}
-
 		return a[0];
 	}
 
@@ -36,9 +34,7 @@ public class Oblig1 {
 				a[i-1] = plassHolder;
 				teller++;
 			}
-
 		}
-
 		return teller;
 	}
 
@@ -55,7 +51,6 @@ public class Oblig1 {
         	if (teller[i] >= teller[index])
             index = i;
     	}
-
 		return index;
 	 }
 
