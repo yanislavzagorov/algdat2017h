@@ -63,23 +63,16 @@ public class Oblig1 {
 	 public static Boolean sjekkStigende(int[] a){
 	 	int end = a.length-1;
 	    int counterAsc = 0;
-	    int counterDesc = 0;
 
 	    for (int i = 0; i < end; i++) {
 	        if(a[i] < a[i+1]){
 	            counterAsc++;
 	        }
-	        else if(a[i] > a[i+1]){
-	            counterDesc++;
-	        }
 	    }
-	    if(counterDesc == 0){
+	    if(counterAsc == 0){
 	        return true;
+	    }else{ 
+	    	return false;
 	    }
-	    else if(counterAsc == 0){
-	        return true;
-	    }
-	    else return false;
-		 }
-
+	}
 }
