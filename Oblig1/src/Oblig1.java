@@ -2,7 +2,7 @@ import java.util.*;
 public class Oblig1 {
 
 	public static void main(String []args){
-		int [] test = {6,10,9,4,1,3,8,5,2,7};
+		int [] test = {6,10,-2,9,-1,4,1,3,-5,8,5,2,7};
 		delsortering(test);
 	}
 
@@ -112,21 +112,14 @@ public class Oblig1 {
 				teller++;
 			}
 		}		
-		for(int j = 0; j < a.length; j++){
-			if(tallType(a[j]) == true){
-				plassHolder = a[teller];
-				a[teller] = a[j];
-				a[j] = plassHolder;
-				teller++;
-			}
-		}		
+		Arrays.sort(a, teller, a.length);	
         System.out.print(Arrays.toString(a));
 	}
 	public static boolean tallType(int a){
 		if(a % 2 == 0){
-			System.out.print("HEI, ");
 			return true; //er partall
-		}
+		}else{
 		return false; //er oddetall
+		}
 	}
 }

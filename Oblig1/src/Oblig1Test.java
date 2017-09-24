@@ -20,7 +20,7 @@ public class Oblig1Test
     //antallFeil += oppgave1();
     //antallFeil += oppgave2();
     //antallFeil += oppgave3();
-    //antallFeil += oppgave4();
+    antallFeil += oppgave4();
     //antallFeil += oppgave5();
     //antallFeil += oppgave6();
     //antallFeil += oppgave7();
@@ -35,7 +35,7 @@ public class Oblig1Test
         + antallFeil + " feil eller svakheter!");
     }
   }
-/*
+
   ///// Oppgave 1 //////////////////////////////////////
 
   public static int oppgave1()
@@ -158,7 +158,7 @@ public class Oblig1Test
        antallFeil++;
      }
     return antallFeil;
-  }*/
+  }
 
   ///// Oppgave 3 //////////////////////////////////////
 
@@ -218,7 +218,7 @@ public class Oblig1Test
   }
 
   ///// Oppgave 4 //////////////////////////////////////
-/*
+
   public static int oppgave4()
   {
     int antallFeil = 0;
@@ -407,7 +407,7 @@ public class Oblig1Test
   }
 
   ///// Oppgave 5 //////////////////////////////////////
-
+/*
   public static int oppgave5()
   {
     int antallFeil = 0;
@@ -734,7 +734,7 @@ public class Oblig1Test
     }
 
     return antallFeil;
-  }
+  }*/
 
  ///// Hjelpemetoder /////////////////////////////
 
@@ -780,5 +780,5 @@ public class Oblig1Test
     }
 
     return a;                        // permutasjonen returneres
-  }*/
+  }
 }
