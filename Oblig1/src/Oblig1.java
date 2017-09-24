@@ -2,7 +2,9 @@ import java.util.*;
 public class Oblig1 {
 
 	public static void main(String []args){
-		// KUN FOR Å TESTE!
+		char [] d = new char[]{'A','B','C','D','E','F','G','H','I','J'};
+		Oblig1.rotasjon(d,-6);
+		System.out.print(Arrays.toString(d));
 	}
 
 	public static int min(int[] a){
@@ -129,5 +131,25 @@ public class Oblig1 {
 		for (int j = 0; j < a.length ; j++) {
 			a[j] = secondArray[j];
 		}
+	}
+	public static void rotasjon(char[] a, int k){
+		char[] secondArray = new char[a.length];
+		char[] thirdArray = new char[a.length];
+		if(k > 0){
+			for(int i = 0; i < a.length; i++){ 
+			secondArray[(i+k) % a.length] = a[i];
+			}
+			for (int j = 0; j < a.length ; j++) {
+				a[j] = secondArray[j];
+			}
+		}
+		if(k < 0){
+			for(int m = 0; m < a.length; m++){ 
+			thirdArray[(m-k) % a.length] = a[m];
+			}
+			for (int n = 0; n < a.length ; n++) {
+				a[n] = thirdArray[n];
+			}
+		}	
 	}
 }
