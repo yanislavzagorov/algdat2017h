@@ -2,8 +2,8 @@ import java.util.*;
 public class Oblig1 {
 
 	public static void main(String []args){
-		int [] test = { 5, 3, 7, 4, 3, 5, 7, 8, 6, 7, 3, 3};
-		System.out.println("modus2: " + modus2(test));
+		int [] test = {6,10,9,4,1,3,8,5,2,7};
+		delsortering(test);
 	}
 
 	public static int min(int[] a){
@@ -101,10 +101,31 @@ public class Oblig1 {
 	}
 
 	public static void delsortering(int[] a){
-		for (int i = 0; i < a.length ; i++) {
-			if(a[i] % 2 != 0){
-					
+		int plassHolder, plassHolder2, teller;
+		teller = 0; 
+		for(int i = 0; i < a.length; i++){
+			if(tallType(a[i]) == false){
+				plassHolder = a[teller];
+				a[teller] = a[i];
+				a[i] = plassHolder;
+				teller++;
 			}
 		}
+		for (int k = 0; k < a.length ; k++ ) {
+				System.out.print(a[k] + ", ");
+			}
+		for(int j = 0; j < a.length; j++){
+			if(tallType(a[j]) == true){
+				for(int n = 0; n < a.length; n++){
+
+				}
+			}
+		}
+	}
+	public static boolean tallType(int a){
+		if(a % 2 == 0){
+			return true; //er partall
+		}
+		return false; //er oddetall
 	}
 }
