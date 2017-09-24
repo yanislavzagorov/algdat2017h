@@ -2,8 +2,7 @@ import java.util.*;
 public class Oblig1 {
 
 	public static void main(String []args){
-		int [] test = {6,10,-2,9,-1,4,1,3,-5,8,5,2,7};
-		delsortering(test);
+		// KUN FOR Å TESTE!
 	}
 
 	public static int min(int[] a){
@@ -120,6 +119,15 @@ public class Oblig1 {
 			return true; //er partall
 		}else{
 		return false; //er oddetall
+		}
+	}
+	public static void rotasjon(char[] a){
+		char[] secondArray = new char[a.length];
+		for(int i = 0; i <= a.length-1; i++){ 
+			secondArray[(i+1) % a.length] = a[i];
+		}
+		for (int j = 0; j < a.length ; j++) {
+			a[j] = secondArray[j];
 		}
 	}
 }
