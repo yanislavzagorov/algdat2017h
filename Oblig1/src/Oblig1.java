@@ -103,6 +103,7 @@ public class Oblig1 {
 	public static void delsortering(int[] a){
 		int plassHolder, plassHolder2, teller;
 		teller = 0; 
+		Arrays.sort(a);
 		for(int i = 0; i < a.length; i++){
 			if(tallType(a[i]) == false){
 				plassHolder = a[teller];
@@ -110,20 +111,20 @@ public class Oblig1 {
 				a[i] = plassHolder;
 				teller++;
 			}
-		}
-		for (int k = 0; k < a.length ; k++ ) {
-				System.out.print(a[k] + ", ");
-			}
+		}		
 		for(int j = 0; j < a.length; j++){
 			if(tallType(a[j]) == true){
-				for(int n = 0; n < a.length; n++){
-
-				}
+				plassHolder = a[teller];
+				a[teller] = a[j];
+				a[j] = plassHolder;
+				teller++;
 			}
-		}
+		}		
+        System.out.print(Arrays.toString(a));
 	}
 	public static boolean tallType(int a){
 		if(a % 2 == 0){
+			System.out.print("HEI, ");
 			return true; //er partall
 		}
 		return false; //er oddetall
