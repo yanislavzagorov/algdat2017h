@@ -7,6 +7,10 @@ public class Oblig1 {
 		System.out.print(Arrays.toString(d));
 	}
 
+
+	/* Oppgave 1
+		// Finn den minste verdien
+	 */
 	public static int min(int[] a){
 		if(a.length == 0){
 			throw new NoSuchElementException("Arrayen er Tom!");
@@ -39,6 +43,9 @@ public class Oblig1 {
 		return teller;
 	}
 
+	/* Oppgave 2
+		// Finn modus (engelsk: mode, som er det tallet som dukker opp flest ganger)
+	 */
 	 public static int modus1(int[] a){
 		/*if(a.length == 0 || a.length == 1 || sjekkStigende(a) == false){
 			throw new IllegalStateException("Tom, kun 1 verdi eller ikke stigende");
@@ -73,6 +80,9 @@ public class Oblig1 {
 	    return true;
 	}
 
+	/* Oppgave 3
+		// Finn modus, mer generelt
+	 */
 	public static int modus2(int[] a){
 		if(a.length == 0){
 			throw new IllegalStateException("Arrayen er Tom!");
@@ -101,6 +111,9 @@ public class Oblig1 {
 		return teller;
 	}
 
+	/* Oppgave 4
+		// Delsortering
+	 */
 	public static void delsortering(int[] a){
 		int plassHolder, plassHolder2, teller;
 		teller = 0; 
@@ -123,6 +136,11 @@ public class Oblig1 {
 		return false; //er oddetall
 		}
 	}
+
+
+	/* Oppgave 5
+		// Rotering
+	 */
 	public static void rotasjon(char[] a){
 		char[] secondArray = new char[a.length];
 		for(int i = 0; i <= a.length-1; i++){ 
@@ -150,6 +168,27 @@ public class Oblig1 {
 			for (int n = 0; n < a.length ; n++) {
 				a[n] = thirdArray[n];
 			}
-		}	
+		}
 	}
+
+	/* Oppgave 6
+		// Rotering, mer generelt
+	 */
+
+	/* Oppgave 7
+		// Fletting
+	 */
+
+	/* Oppgave 8
+		// Sammenligning av effektivitetene til sorteringsalgoritmer
+	 */
+	public static void tidSorteringer(int[] a){
+
+
+
+	}
+
+	/* Oppgave 9
+		// Summen av to tall er lik x?
+	 */
 }
