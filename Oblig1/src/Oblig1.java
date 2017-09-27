@@ -4,14 +4,20 @@ import java.util.*;
 public class Oblig1 {
 
 	public static void main(String []args){
+		/*
 		char [] d = new char[]{'A','B','C','D','E','F','G','H','I','J'};
 		Oblig1.rotasjon(d,-6);
 		System.out.print(Arrays.toString(d));
 		System.out.println( );
+		*/
 
 		String a = flett("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
 		System.out.println(a);
 	}
+
+
+
+
 
 	/* Oppgave 1
 		// Finn den minste verdien
@@ -206,18 +212,19 @@ public class Oblig1 {
 
 	public static String flett(String...s){
 		String u = new String();
-		int[] lengths = new int[s.length];
 
-		for(int i = 0; i < s.length-1; i++){
-			lengths[i] = s[i].length();
+		for(int x = 0; x < s.length; x++){
+			for(int y = 0; y < s.length; y++) {
+				if (x >= s[y].length()) {
+				} else {
+					u = u + s[y].charAt(x);
+				}
+			}
 		}
-		Arrays.sort(lengths);
-
-		System.out.println(Arrays.toString(lengths);
 
 		return u;
 	}
-
+	
 	/* Oppgave 8
 		// Sammenligning av effektivitetene til sorteringsalgoritmer
 	 */
