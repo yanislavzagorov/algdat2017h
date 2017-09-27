@@ -11,31 +11,7 @@ public class Oblig1 {
 
 		String a = flett("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
 		System.out.println(a);
-
-
-
-
-
-
-
 	}
-
-
-	public static String flett(String...s){
-		String u = new String();
-		int[] lengths = new int[s.length];
-
-		for(int i = 0; i < s.length-1; i++){
-			lengths[i] = s[i].length();
-		}
-		Arrays.sort(lengths);
-
-		System.out.println(Arrays.toString(lengths);
-
-		return u;
-	}
-
-
 
 	/* Oppgave 1
 		// Finn den minste verdien
@@ -228,39 +204,19 @@ public class Oblig1 {
 		return u;
 	}
 
+	public static String flett(String...s){
+		String u = new String();
+		int[] lengths = new int[s.length];
 
+		for(int i = 0; i < s.length-1; i++){
+			lengths[i] = s[i].length();
+		}
+		Arrays.sort(lengths);
 
+		System.out.println(Arrays.toString(lengths);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		return u;
+	}
 
 	/* Oppgave 8
 		// Sammenligning av effektivitetene til sorteringsalgoritmer
