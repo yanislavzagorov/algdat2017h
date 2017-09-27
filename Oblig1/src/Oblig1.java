@@ -1,3 +1,5 @@
+import com.sun.deploy.util.StringUtils;
+
 import java.util.*;
 public class Oblig1 {
 
@@ -5,7 +7,34 @@ public class Oblig1 {
 		char [] d = new char[]{'A','B','C','D','E','F','G','H','I','J'};
 		Oblig1.rotasjon(d,-6);
 		System.out.print(Arrays.toString(d));
+		System.out.println( );
+
+		String a = flett("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
+		System.out.println(a);
+
+
+
+
+
+
+
 	}
+
+
+	public static String flett(String...s){
+		String u = new String();
+		int[] lengths = new int[s.length];
+
+		for(int i = 0; i < s.length-1; i++){
+			lengths[i] = s[i].length();
+		}
+		Arrays.sort(lengths);
+
+		System.out.println(Arrays.toString(lengths);
+
+		return u;
+	}
+
 
 
 	/* Oppgave 1
@@ -178,6 +207,60 @@ public class Oblig1 {
 	/* Oppgave 7
 		// Fletting
 	 */
+	public static String flett(String s, String t){
+		int sCount = 0;
+		int tCount = 0;
+		int k = 0;
+		String u = new String();
+
+		while(sCount<s.length() && tCount < t.length()){
+			u = u + s.charAt(sCount++);
+			u = u + t.charAt(tCount++);
+		}
+
+		while(sCount < s.length()){
+			u = u + s.charAt(sCount++);
+		}
+		while(tCount < t.length()){
+			u = u + t.charAt(tCount++);
+		}
+
+		return u;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	/* Oppgave 8
 		// Sammenligning av effektivitetene til sorteringsalgoritmer
