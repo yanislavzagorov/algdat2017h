@@ -2,12 +2,23 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Oblig1_del2 {
+    public static void main(String[] args){
+        int[] a = randPerm(100000);
+
+    }
+
     /* Oppgave 8
 		// Sammenligning av effektivitetene til sorteringsalgoritmer
 	 */
     public static void tidSorteringer(int[] a){
-        int[] b = randPerm(4);
-        System.out.println(b[0]);
+
+        /*
+            a) Utvalgssortering;
+            b) Innsettingssortering;
+            c) Kvikksortering; og
+            d) Flettesortering
+         */
+        
     }
 
     public static int[] randPerm(int n)
