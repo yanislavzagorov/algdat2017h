@@ -179,6 +179,27 @@ public class Oblig1 {
 	/* Oppgave 6
 		// Rotering, mer generelt
 	 */
+         public static void rotasjonn(char[]arr, int k){
+        int n = arr.length;
+        if (n < 2) return;  //Sjekker om tabellen er tomt eller har kun en verdi
+
+        if ((k %= n) < 0) k += n;
+
+        if (k <= (n+1)/2) // k enheter vil bli forskyvd mot høyre
+        {
+            char[] b = Arrays.copyOfRange(arr, n - k, n);
+            for (int i = n - 1; i >= k; i--) arr[i] = arr[i - k];
+            System.arraycopy(b, 0, arr, 0, k);
+        }
+        else //k blir forskyvd mot venstre der n - k enheter mot venstre
+        {
+            char[] b = Arrays.copyOfRange(arr, 0, n - k);
+            for (int i = 0; i < k; i++) arr[i] = arr[i + n - k];
+            System.arraycopy(b, 0, arr, k, n - k);
+        }
+    }
+
+
 
 	/* Oppgave 7
 		// Fletting
