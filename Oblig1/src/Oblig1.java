@@ -93,9 +93,6 @@ public class Oblig1 {
 		if(a.length == 0){
 			throw new IllegalStateException("Arrayen er Tom!");
 		}
-		if(a.length == 1){
-			throw new IllegalStateException("Arrayen har kun 1 index!");
-		}
 		int modus = antallGjentagelse(a[0],a);
 		int tall = 0;
 		for(int i = 1; i < a.length; i++){
