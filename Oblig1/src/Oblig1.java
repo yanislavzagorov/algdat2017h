@@ -2,15 +2,15 @@ import java.util.*;
 public class Oblig1 {
 
 	public static void main(String []args){
-		/*
-		char [] d = new char[]{'A','B','C','D','E','F','G','H','I','J'};
-		Oblig1.rotasjon(d,-6);
-		System.out.print(Arrays.toString(d));
-		System.out.println( );
-		*/
+		int[] a = {};   // skal kaste unntak her!
+	    int[] b = {1};  // skal ikke kaste unntak her!
+	    int[] c = {1,1};
+	    int[] d = {6,2,4,6,9,1,4,9,10};
+	    int[] dkopi = {6,2,4,6,9,1,4,9,10};
+	    int[] e = {5,4,3,2,1};
+	    int[] f = {1,2,2,2,2,2,3};
+	    System.out.println(modus2(dkopi));
 
-		String s=flett("AFK","BGLP","CHMQT","DINRUW","EJOSVXY");
-		System.out.println(s);
 	}
 
 	/* Oppgave 1
@@ -75,8 +75,6 @@ public class Oblig1 {
 		return index;
 	}
 
-
-
 	public static Boolean sjekkStigende(int[] a){
 	    for(int i = 1; i < a.length; i++){
 	    	if(a[i-1] > a[i]){
@@ -90,18 +88,29 @@ public class Oblig1 {
 		// Finn modus, mer generelt
 	 */
 	public static int modus2(int[] a){
+		int mod;
 		if(a.length == 0){
 			throw new IllegalStateException("Arrayen er Tom!");
 		}
-		int modus = antallGjentagelse(a[0],a);
-		int tall = 0;
-		for(int i = 1; i < a.length; i++){
-			if(antallGjentagelse(a[i], a) > modus){
-				modus = antallGjentagelse(a[i], a);
-				tall = a[i];
+		else{
+			if (altLikt(a) == true) {
+				return a[0];
 			}
+			else{
+				mod = a[0];
+				for (int i = 1; i < a.length ; i++) {
+					if (antallGjentagelse(a[i], a) > antallGjentagelse(a[i-1], a)) {
+						mod = a[i];	
+					}
+					else if (antallGjentagelse(a[i], a) == antallGjentagelse(a[i-1], a)) {
+						if (a[i] > a[i-1]) {
+							mod = a[i];	
+						}
+					}
+				}
+			}
+		return mod;
 		}
-		return tall;
 	}
 
 	public static int antallGjentagelse(int tall, int[] a){
@@ -112,6 +121,16 @@ public class Oblig1 {
 			}
 		}
 		return teller;
+	}
+	public static boolean altLikt(int[] a){
+		boolean flag = true;
+		int first = a[0];
+			for (int i = 1; i < a.length && flag ; i++) {
+				if (a[i] != first) {
+					flag = false;
+				}
+			}
+		return flag;
 	}
 
 	/* Oppgave 4

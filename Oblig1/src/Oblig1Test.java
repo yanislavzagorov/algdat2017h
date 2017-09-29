@@ -17,13 +17,13 @@ public class Oblig1Test
   {
     int antallFeil = 0;
 
-    antallFeil += oppgave1();
-   	antallFeil += oppgave2();
-    antallFeil += oppgave3();
-    antallFeil += oppgave4();
-    antallFeil += oppgave5();
-    antallFeil += oppgave6();
-    antallFeil += oppgave7();
+   // antallFeil += oppgave1();
+   	//antallFeil += oppgave2();
+   // antallFeil += oppgave3();
+   antallFeil += oppgave4();
+  //  antallFeil += oppgave5();
+    //antallFeil += oppgave6();
+   // antallFeil += oppgave7();
     
     if (antallFeil == 0)
     {
@@ -170,8 +170,8 @@ public class Oblig1Test
     int[] a = {};   // skal kaste unntak her!
     int[] b = {1};  // skal ikke kaste unntak her!
     int[] c = {1,1};
-    int[] d = {6,2,4,6,9,1,4,9,10};
-    int[] dkopi = {6,2,4,6,9,1,4,9,10};
+    int[] d = {6,2,4,6,9,1,4,9,10,6};
+    int[] dkopi = {6,2,4,6,9,1,4,9,10,6};
     int[] e = {5,4,3,2,1};
     int[] f = {1,2,2,2,2,2,3};
 
