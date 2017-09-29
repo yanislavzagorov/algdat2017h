@@ -1,17 +1,6 @@
-//import com.sun.deploy.util.StringUtils;
-
 import java.util.*;
 public class Oblig1 {
 
-	public static void main(String []args){
-		/*
-		char [] d = new char[]{'A','B','C','D','E','F','G','H','I','J'};
-		Oblig1.rotasjon(d,-6);
-		System.out.print(Arrays.toString(d));
-		System.out.println( );
-		*/
-
-	}
 
 	/* Oppgave 1
 		// Finn den minste verdien
@@ -157,10 +146,10 @@ public class Oblig1 {
 	}
 	
 
-	/* Oppgave 6
+	// Oppgave 6
 		// Rotering, mer generelt
 	 
-         public static void rotasjonn(char[]arr, int k){ // BAS SIN KODE
+         public static void rotasjon(char[]arr, int k){ // BAS SIN KODE
         int n = arr.length;
         if (n < 2) return;  //Sjekker om tabellen er tomt eller har kun en verdi
 
@@ -178,32 +167,7 @@ public class Oblig1 {
             for (int i = 0; i < k; i++) arr[i] = arr[i + n - k];
             System.arraycopy(b, 0, arr, k, n - k);
         }
-    }*/
-    public static void rotasjon(char[] a, int k){
-		char[] secondArray = new char[a.length];
-		char[] thirdArray = new char[a.length];
-		if(k > 0){
-			for(int i = 0; i < a.length; i++){ 
-			secondArray[(i+k) % a.length] = a[i];
-			}
-			for (int j = 0; j < a.length ; j++) {
-				a[j] = secondArray[j];
-			}
-		}
-		if(k < 0){
-			for(int m = 0; m < a.length; m++){ 
-			thirdArray[(m-k) % a.length] = a[m];
-			}
-			for (int n = 0; n < a.length ; n++) {
-				a[n] = thirdArray[n];
-			}
-		}
-	}
-
-
-
-
-
+    }
 	/* Oppgave 7
 		// Fletting
 	 */
