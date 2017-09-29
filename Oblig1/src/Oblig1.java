@@ -11,6 +11,8 @@ public class Oblig1 {
 		System.out.println( );
 		*/
 
+		String s=flett("AFK","BGLP","CHMQT","DINRUW","EJOSVXY");
+		System.out.println(s);
 	}
 
 	/* Oppgave 1
@@ -205,18 +207,19 @@ public class Oblig1 {
 	}
 
 	public static String flett(String...s){
-		String u = new String();
+		StringBuilder aaa = new StringBuilder();
 
-		for(int x = 0; x < s.length; x++){
+		for(int x = 0; x <= s.length+1; x++){								
 			for(int y = 0; y < s.length; y++) {
+				System.out.println("y" + y);
 				if (x >= s[y].length()) {
 				} else {
-					u = u + s[y].charAt(x);
+					aaa.append(s[y].charAt(x));
 				}
 			}
 		}
 
-		return u;
+		return aaa.toString();
 	}
 
 	/* Oppgave 9
