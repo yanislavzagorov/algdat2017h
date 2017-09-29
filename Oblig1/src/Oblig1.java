@@ -40,32 +40,33 @@ public class Oblig1 {
 	/* Oppgave 2
 		// Finn modus (engelsk: mode, som er det tallet som dukker opp flest ganger)
 	 */
-	 public static int modus1(int[] a){
-		/*if(a.length == 0 || a.length == 1 || sjekkStigende(a) == false){
-			throw new IllegalStateException("Tom, kun 1 verdi eller ikke stigende");
-		}*/
-		if(a.length == 0){
-			throw new IllegalStateException("Tom array");
-		}
-		else if(a.length == 1){
-			throw new IllegalStateException("Kun 1 index");
-		}
-		else if(sjekkStigende(a) == false){
-			throw new IllegalStateException("Ikke stigende");
+	public static int modus1(int[] a){
+		if(sjekkStigende(a) == false) {
+
+
+			if (a.length == 0) {
+				throw new IllegalStateException("Tom array");
+			} else if (a.length == 1) {
+				throw new IllegalStateException("Kun 1 index");
+			} else if (sjekkStigende(a) == false) {
+				throw new IllegalStateException("Ikke stigende");
+			}
 		}
 		int[] teller = new int[50];
 		for(int i = 0; i < a.length; i++){
 			teller[a[i]]++;
 		}
 		int index = teller.length-1;
-    	for(int i=teller.length-2; i >=0; i--) {
-        	if (teller[i] >= teller[index])
-            index = i;
-    	}
+		for(int i=teller.length-2; i >=0; i--) {
+			if (teller[i] >= teller[index])
+				index = i;
+		}
 		return index;
-	 }
+	}
 
-	 public static Boolean sjekkStigende(int[] a){
+
+
+	public static Boolean sjekkStigende(int[] a){
 	    for(int i = 1; i < a.length; i++){
 	    	if(a[i-1] > a[i]){
 	    		return false;
@@ -155,7 +156,7 @@ public class Oblig1 {
 
         if ((k %= n) < 0) k += n;
 
-        if (k <= (n+1)/2) // k enheter vil bli forskyvd mot høyre
+        if (k <= (n+1)/2) // k enheter vil bli forskyvd mot hï¿½yre
         {
             char[] b = Arrays.copyOfRange(arr, n - k, n);
             for (int i = n - 1; i >= k; i--) arr[i] = arr[i - k];
