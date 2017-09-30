@@ -1,26 +1,104 @@
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Oblig1_del2 {
     public static void main(String[] args){
-        int[] a = randPerm(100000);
+        /* Oppgavetekst:
+        * Oppgave 8:
+        *
+        * Vi har valgt bruker System.nanoTime framfor System.currentTimeMillis()
+        * for den er mer nøyaktig, og blir i mye mindre grad påvirket av 
+         */
 
+
+        int[] a = randPerm(100000);
+        tidSorteringer(a);
     }
 
     /* Oppgave 8
 		// Sammenligning av effektivitetene til sorteringsalgoritmer
 	 */
     public static void tidSorteringer(int[] a){
+        int[] kopi1 = a;
+        int[] kopi2 = a;
+        int[] kopi3 = a;
+        int[] kopi4 = a;
 
-        /*
-            a) Utvalgssortering;
-            b) Innsettingssortering;
-            c) Kvikksortering; og
-            d) Flettesortering
-         */
+        long tid1a = System.nanoTime();
+        utvalgssortering(kopi1);
+        long tid1b = System.nanoTime() - tid1a;
+        System.out.println("a) Utvalgssortering: " + tid1b + "ns");
 
+        long tid2a = System.nanoTime();
+        innsettingssortering(kopi2);
+        long tid2b = System.nanoTime() - tid2a;
+        System.out.println("a) Innsettingssortering: " + tid2b + "ns");
+
+        long tid3a = System.nanoTime();
+        kvikksortering(kopi3);
+        long tid3b = System.nanoTime() - tid3a;
+        System.out.println("a) Kvikksortering: " + tid3b + "ns");
+
+        long tid4a = System.nanoTime();
+        flettesortering(kopi4);
+        long tid4b = System.nanoTime() - tid4a;
+        System.out.println("a) Flettesortering: " + tid4b + "ns");
+
+        int[] tidssamling = new int[3];
+        for (int i = 0; i >)
     }
 
+    /* Oppgave 9
+		// Summen av to tall er lik x?
+	 */
+    public static int[] sumX(int[] a, int x) {
+        if (Oblig1.sjekkStigende(a) == false) {
+            throw new IllegalArgumentException("ikke sortert");
+        } else {
+            for (int i = 0; i < a.length; i++) {
+                a[i] = i;
+                for (int j = 0; j < a.length; j++) {
+                    if (a[i] + a[j] == x) {
+
+                        return new int[]{a[i], a[j]};
+                    }
+                }
+
+            }
+            return null;
+        }
+    }
+
+    public static void kvikksortering(int[] a)
+    {
+        kvikksortering0(a, 0, a.length - 1);
+    }
+
+    public static void utvalgssortering(int[] a)
+    {
+        for (int i = 0; i < a.length - 1; i++)
+            bytt(a, i, min(a, i, a.length));
+    }
+
+    public static void innsettingssortering(int[] a)
+    {
+        for (int i = 1; i < a.length; i++)
+        {
+            int temp = a[i];  // hjelpevariabel
+            for (int j = i - 1; j >= 0 && temp < a[j]; j--) bytt(a, j, j + 1);
+        }
+    }
+
+    public static void flettesortering(int[] a)
+    {
+        int[] b = Arrays.copyOf(a, a.length/2);   // en hjelpetabell for flettingen
+        flettesortering(a,b,0,a.length);          // kaller metoden over
+    }
+
+    //
+    //      HJELPEMETODER i tilfelle at brukeren ikke har tilgang til Tabell.java
+    //
     public static int[] randPerm(int n) {
         Random r = new Random();
         int[] a = new int[n];
@@ -63,24 +141,6 @@ public class Oblig1_del2 {
         return m;
     }
 
-    public static void utvalgssortering(int[] a)
-    {
-        for (int i = 0; i < a.length - 1; i++)
-            bytt(a, i, min(a, i, a.length));
-    }
-
-    public static void innsettingssortering(int[] a)
-    {
-        for (int i = 1; i < a.length; i++)  // starter med i = 1
-        {
-            int temp = a[i];  // hjelpevariabel
-            for (int j = i - 1; j >= 0 && temp < a[j]; j--) bytt(a, j, j + 1);
-        }
-    }
-
-    //
-    //      KVIKKSORTERING HJELPEMETODER
-    //
     private static int parter0(int[] a, int v, int h, int skilleverdi)
     {
         while (true)                                  // stopper når v > h
@@ -130,30 +190,30 @@ public class Oblig1_del2 {
         kvikksortering0(a, fra, til - 1);  // v = fra, h = til - 1
     }
 
-    public static void kvikksortering(int[] a)   // sorterer hele tabellen
+    private static void flett(int[] a, int[] b, int fra, int m, int til)
     {
-        kvikksortering0(a, 0, a.length - 1);
+        int n = m - fra;                // antall elementer i a[fra:m>
+        System.arraycopy(a,fra,b,0,n);  // kopierer a[fra:m> over i b[0:n>
+
+        int i = 0, j = m, k = fra;      // løkkeST0r og indekser
+
+        while (i < n && j < til)        // fletter b[0:n> og a[m:til> og
+        {                               // legger resultatet i a[fra:til>
+            a[k++] = b[i] <= a[j] ? b[i++] : a[j++];
+        }
+
+        while (i < n) a[k++] = b[i++];  // tar med resten av b[0:n>
     }
 
-    /* Oppgave 9
-		// Summen av to tall er lik x?
-	 */
-    public static int[] sumX(int[] a, int x) {
-        if (Oblig1.sjekkStigende(a) == false) {
-            throw new IllegalArgumentException("ikke sortert");
-        } else {
-            for (int i = 0; i < a.length; i++) {
-                a[i] = i;
-                for (int j = 0; j < a.length; j++) {
-                    if (a[i] + a[j] == x) {
+    private static void flettesortering(int[] a, int[] b, int fra, int til)
+    {
+        if (til - fra <= 1) return;   // a[fra:til> har maks ett element
+        int m = (fra + til)/2;        // midt mellom fra og til
 
-                        return new int[]{a[i], a[j]};
-                    }
-                }
+        flettesortering(a,b,fra,m);   // sorterer a[fra:m>
+        flettesortering(a,b,m,til);   // sorterer a[m:til>
 
-            }
-            return null;
-        }
+        if (a[m-1] > a[m]) flett(a,b,fra,m,til);  // fletter a[fra:m> og a[m:til>
     }
 }
 
