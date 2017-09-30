@@ -28,25 +28,27 @@ public class Oblig1_del2 {
         long tid1a = System.nanoTime();
         utvalgssortering(kopi1);
         long tid1b = System.nanoTime() - tid1a;
-        System.out.println("a) Utvalgssortering: " + tid1b + "ns");
+        System.out.println("a) Utvalgssortering: " + tid1b + " nanosekunder.");
 
         long tid2a = System.nanoTime();
         innsettingssortering(kopi2);
         long tid2b = System.nanoTime() - tid2a;
-        System.out.println("a) Innsettingssortering: " + tid2b + "ns");
+        System.out.println("a) Innsettingssortering: " + tid2b + " nanosekunder.");
 
         long tid3a = System.nanoTime();
         kvikksortering(kopi3);
         long tid3b = System.nanoTime() - tid3a;
-        System.out.println("a) Kvikksortering: " + tid3b + "ns");
+        System.out.println("a) Kvikksortering: " + tid3b + " nanosekunder.");
 
         long tid4a = System.nanoTime();
         flettesortering(kopi4);
         long tid4b = System.nanoTime() - tid4a;
-        System.out.println("a) Flettesortering: " + tid4b + "ns");
+        System.out.println("a) Flettesortering: " + tid4b + " nanosekunder.");
 
         int[] tidssamling = new int[3];
-        for (int i = 0; i >)
+        for(int i = 0; i < 4; i++){
+            System.out.println("DICKS");
+        }
     }
 
     /* Oppgave 9
