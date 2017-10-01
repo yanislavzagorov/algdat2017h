@@ -149,7 +149,7 @@ public class Oblig1 {
 			}
 		}		
 		Arrays.sort(a, teller, a.length);	
-        System.out.print(Arrays.toString(a));
+        System.out.println(Arrays.toString(a));
 	}
 	public static boolean tallType(int a){
 		if(a % 2 == 0){

@@ -17,13 +17,13 @@ public class Oblig1Test
   {
     int antallFeil = 0;
 
-   // antallFeil += oppgave1();
-   	//antallFeil += oppgave2();
-   // antallFeil += oppgave3();
+   antallFeil += oppgave1();
+   	antallFeil += oppgave2();
+    antallFeil += oppgave3();
    antallFeil += oppgave4();
-  //  antallFeil += oppgave5();
-    //antallFeil += oppgave6();
-   // antallFeil += oppgave7();
+    antallFeil += oppgave5();
+    antallFeil += oppgave6();
+    antallFeil += oppgave7();
     
     if (antallFeil == 0)
     {
