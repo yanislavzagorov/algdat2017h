@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -7,8 +8,13 @@ public class Oblig1_del2 {
         /* Oppgavetekst:
         * Oppgave 8:
         *
-        * Vi har valgt bruker System.nanoTime framfor System.currentTimeMillis()
-        * for den er mer nøyaktig, og blir i mye mindre grad påvirket av 
+        * Vi har valgt å bruke System.nanoTime framfor System.currentTimeMillis()
+        * for den er mer nøyaktig ved små verdier (<15ms).
+        * På enheten min ser vi at Utvalgssortering er definitivt den treigeste
+        * sorteringsmetoden og tar nesten to sekunder for å utføres. Kvikksortering
+        * er 140x kjappere enn Utvalgssortering, og Innsettingssortering og
+        * Flettesortering tar nesten like lang tid med en marginal forskjell hos
+        * Innsettingssorteringen som vinner testen ca hver 10. gang.
          */
 
 
@@ -28,27 +34,22 @@ public class Oblig1_del2 {
         long tid1a = System.nanoTime();
         utvalgssortering(kopi1);
         long tid1b = System.nanoTime() - tid1a;
-        System.out.println("a) Utvalgssortering: " + tid1b + " nanosekunder.");
+        System.out.println("a) Utvalgssortering: " + tid1b/1000000 + " millisekunder.");
 
         long tid2a = System.nanoTime();
         innsettingssortering(kopi2);
         long tid2b = System.nanoTime() - tid2a;
-        System.out.println("a) Innsettingssortering: " + tid2b + " nanosekunder.");
+        System.out.println("b) Innsettingssortering: " + tid2b/1000000 + " millisekunder.");
 
         long tid3a = System.nanoTime();
         kvikksortering(kopi3);
         long tid3b = System.nanoTime() - tid3a;
-        System.out.println("a) Kvikksortering: " + tid3b + " nanosekunder.");
+        System.out.println("c) Kvikksortering: " + tid3b/1000000 + " millisekunder.");
 
         long tid4a = System.nanoTime();
         flettesortering(kopi4);
         long tid4b = System.nanoTime() - tid4a;
-        System.out.println("a) Flettesortering: " + tid4b + " nanosekunder.");
-
-        int[] tidssamling = new int[3];
-        for(int i = 0; i < 4; i++){
-            System.out.println("DICKS");
-        }
+        System.out.println("d) Flettesortering: " + tid4b/1000000 + " millisekunder.");
     }
 
     /* Oppgave 9
