@@ -6,7 +6,8 @@ import java.util.Random;
 public class Oblig1_del2 {
     public static void main(String[] args){
         /* Oppgavetekst:
-        * Oppgave 8:
+        *
+        **  Oppgave 8:
         *
         * Vi har valgt å bruke System.nanoTime framfor System.currentTimeMillis()
         * for den er mer nøyaktig ved små verdier (<15ms).
