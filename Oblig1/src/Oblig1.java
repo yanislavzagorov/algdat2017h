@@ -269,7 +269,6 @@ public class Oblig1 {
 
 		for(int x = 0; x <= s.length+1; x++){								
 			for(int y = 0; y < s.length; y++) {
-				System.out.println("y" + y);
 				if (x >= s[y].length()) {
 				} else {
 					aaa.append(s[y].charAt(x));

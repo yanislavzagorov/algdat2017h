@@ -16,13 +16,33 @@ public class Oblig1_del2 {
         * er 140x kjappere enn Utvalgssortering, og Innsettingssortering og
         * Flettesortering tar nesten like lang tid med en marginal forskjell hos
         * Innsettingssorteringen som vinner testen ca hver 10. gang.
-         */
-        int[] a = randPerm(100000);
-        int []b = {2,3,7,10,16};
-        System.out.println(Arrays.toString(sumX(b,11)));
+        *
+        ** Utskrift 8:
+            a) Utvalgssortering: 1897 millisekunder.
+            b) Innsettingssortering: 2 millisekunder.
+            c) Kvikksortering: 15 millisekunder.
+            d) Flettesortering: 2 millisekunder.
+        *
+        *================================================================================
+        **  Oppgave 9:
+        *
+        * Kodesnutten under returner først kombinasjonen [10, 16], og deretter null
+        * dersom det ikke er noe par som summeres til 26.
+        *
+        ** Utskrift 9:
+            Kombinasjon funnet! - [10, 16]
+            null
+        *
+        */
 
+        //Oppgave 8
         int[] a = randPerm(100000);
         tidSorteringer(a);
+
+        //Oppgave 9
+        int[] b = {2,3,7,10,16};
+        System.out.println("Kombinasjon funnet! - " + Arrays.toString(sumX(b,26)));
+        System.out.println(Arrays.toString(sumX(b, 27)));
     }
 
     /* Oppgave 8
@@ -59,23 +79,23 @@ public class Oblig1_del2 {
 		// Summen av to tall er lik x?
 	 */
     public static int[] sumX(int[] a, int x) {
-        if (Oblig1.sjekkStigende(a) == false) {
-            throw new IllegalArgumentException("ikke sortert");
-        } else {
-            for (int i = 0; i < a.length; i++) {
-                a[i] = i;
-                for (int j = 0; j < a.length; j++) {
-                    if (a[i] + a[j] == x) {
-
-                        return new int[]{a[i], a[j]};
-                    }
+        int tempverdi;
+        for (int i = 0; i < a.length; i++) {
+            tempverdi = i;
+            for (int j = 0; j < a.length; j++) {
+                if (a[i] + a[j] == x) {
+                    return new int[]{a[i], a[j]};
                 }
-
             }
-            return null;
+
         }
+        return null;
     }
 
+
+    //
+    //      HJELPEMETODER i tilfelle at brukeren ikke har tilgang til Tabell.java
+    //
     public static void kvikksortering(int[] a)
     {
         kvikksortering0(a, 0, a.length - 1);
@@ -102,9 +122,6 @@ public class Oblig1_del2 {
         flettesortering(a,b,0,a.length);          // kaller metoden over
     }
 
-    //
-    //      HJELPEMETODER i tilfelle at brukeren ikke har tilgang til Tabell.java
-    //
     public static int[] randPerm(int n) {
         Random r = new Random();
         int[] a = new int[n];
