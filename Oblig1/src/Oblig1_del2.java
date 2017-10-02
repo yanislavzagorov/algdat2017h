@@ -17,7 +17,9 @@ public class Oblig1_del2 {
         * Flettesortering tar nesten like lang tid med en marginal forskjell hos
         * Innsettingssorteringen som vinner testen ca hver 10. gang.
          */
-
+        int[] a = randPerm(100000);
+        int []b = {2,3,7,10,16};
+        System.out.println(Arrays.toString(sumX(b,11)));
 
         int[] a = randPerm(100000);
         tidSorteringer(a);
