@@ -4,6 +4,9 @@ import java.util.Random;
 public class Oblig1_del2 {
     public static void main(String[] args){
         int[] a = randPerm(100000);
+        int []b = {2,3,7,10,16};
+        System.out.println(Arrays.toString(sumX(b,11)));
+
 
     }
 

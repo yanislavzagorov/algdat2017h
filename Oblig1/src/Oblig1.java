@@ -169,7 +169,7 @@ public class Oblig1 {
 			}
 			Arrays.sort(a, 0, v);
 			Arrays.sort(a, v, a.length);
-			System.out.println(Arrays.toString(a));
+
 
 		}
 	}
@@ -190,10 +190,10 @@ public class Oblig1 {
 			}
 		}
 		Arrays.sort(a, teller, a.length);
+
+
 		System.out.println(Arrays.toString(a));
 	}//end class
-
-
 
 	public static boolean tallType(int a){
 		if(a % 2 == 0){
