@@ -316,6 +316,7 @@ public class Oblig1Test
 
     if (!Arrays.equals(a,b))
     {
+      System.out.println(Arrays.toString(a));
       System.out.println
         ("Oppgave 4: i) Det blir feil hvis det kun er oddetall!");
       antallFeil++;

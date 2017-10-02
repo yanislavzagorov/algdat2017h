@@ -100,11 +100,11 @@ public class Oblig1 {
 				mod = a[0];
 				for (int i = 1; i < a.length ; i++) {
 					if (antallGjentagelse(a[i], a) > antallGjentagelse(a[i-1], a)) {
-						mod = a[i];	
+						mod = a[i];
 					}
 					else if (antallGjentagelse(a[i], a) == antallGjentagelse(a[i-1], a)) {
 						if (a[i] > a[i-1]) {
-							mod = a[i];	
+							mod = a[i];
 						}
 					}
 				}
@@ -133,24 +133,68 @@ public class Oblig1 {
 		return flag;
 	}
 
+
 	/* Oppgave 4
 		// Delsortering
 	 */
-	public static void delsortering(int[] a){
-		int plassHolder, plassHolder2, teller;
-		teller = 0; 
+	public static void delsortering(int[] a) {
+		int v = 0;
+		int h = a.length - 1;
+		if (a.length == 0) { // vis tabellen er tom kastes unntak
+
+		}
+
+		else {
+			while (true) {
+				while ((v <= h) && (a[v] % 2 != 0)) {
+					// oddetall
+					v++;
+
+				}
+				while ((v <= h) && (a[h] % 2 == 0)) {
+					//partall
+					h--;
+
+				}
+				if (v <= h) { //bytt
+					int temp = a[v];
+					a[v] = a[h];
+					a[h] = temp;
+					v++;
+					h--;
+
+
+				} else break;
+
+			}
+			Arrays.sort(a, 0, v);
+			Arrays.sort(a, v, a.length);
+			System.out.println(Arrays.toString(a));
+
+		}
+	}
+
+
+
+
+	/*
+		int plassHolder, teller;
+		teller = 0;
 		Arrays.sort(a);
-		for(int i = 0; i < a.length; i++){
-			if(tallType(a[i]) == false){
+		for (int i = 0; i < a.length; i++) {
+			if (tallType(a[i]) == false) {
 				plassHolder = a[teller];
 				a[teller] = a[i];
 				a[i] = plassHolder;
 				teller++;
 			}
-		}		
-		Arrays.sort(a, teller, a.length);	
-        System.out.println(Arrays.toString(a));
-	}
+		}
+		Arrays.sort(a, teller, a.length);
+		System.out.println(Arrays.toString(a));
+	}//end class
+
+
+
 	public static boolean tallType(int a){
 		if(a % 2 == 0){
 			return true; //er partall
