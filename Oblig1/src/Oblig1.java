@@ -1,6 +1,14 @@
 import java.util.*;
 public class Oblig1 {
 
+	/*
+		Sahand Nasiri 			- s315316
+		Suphakin Riemprasert  	– s315572
+		Ismail Killinc 			– s309734
+		Yanislav Zagorov 		– s309732
+		Irfanullah Nazand 		– s309731
+	 */
+
 	/* Oppgave 1
 		// Finn den minste verdien
 	 */

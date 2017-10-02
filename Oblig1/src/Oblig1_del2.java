@@ -1,9 +1,14 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-
 public class Oblig1_del2 {
+
+	/*
+		Sahand Nasiri 			- s315316
+		Suphakin Riemprasert  	– s315572
+		Ismail Killinc 			– s309734
+		Yanislav Zagorov 		– s309732
+		Irfanullah Nazand 		– s309731
+	 */
+
     public static void main(String[] args){
         /* Oppgavetekst:
         *
